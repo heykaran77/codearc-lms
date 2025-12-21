@@ -23,7 +23,7 @@ export const users = pgTable("users", {
   isApproved: boolean("is_approved").default(false), // For mentors
   createdAt: timestamp("created_at").defaultNow(),
 });
-  
+
 // Courses Table
 export const courses = pgTable("courses", {
   id: serial("id").primaryKey(),
@@ -80,11 +80,14 @@ export const notifications = pgTable("notifications", {
   userId: integer("user_id")
     .references(() => users.id)
     .notNull(),
+  title: text("title"),
   message: text("message").notNull(),
+  type: varchar("type", { length: 50 }).default("info"),
   isRead: boolean("is_read").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+// Reviews / Activity Updates Table
 // Reviews / Activity Updates Table
 export const reviews = pgTable("reviews", {
   id: serial("id").primaryKey(),
@@ -97,5 +100,19 @@ export const reviews = pgTable("reviews", {
   content: text("content").notNull(), // The update/review content
   status: varchar("status", { length: 50 }).default("pending"), // pending, seen, changes_requested, approved
   mentorComment: text("mentor_comment"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Messages Table (Chat)
+export const messages = pgTable("messages", {
+  id: serial("id").primaryKey(),
+  senderId: integer("sender_id")
+    .references(() => users.id)
+    .notNull(),
+  receiverId: integer("receiver_id")
+    .references(() => users.id)
+    .notNull(),
+  content: text("content").notNull(),
+  isRead: boolean("is_read").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
