@@ -8,6 +8,9 @@ import courseRoutes from "./routes/courseRoutes";
 import userRoutes from "./routes/userRoutes";
 import progressRoutes from "./routes/progressRoutes";
 import reviewRoutes from "./routes/reviewRoutes";
+import notificationRoutes from "./routes/notificationRoutes";
+import chatRoutes from "./routes/chatRoutes";
+import adminRoutes from "./routes/adminRoutes";
 
 dotenv.config();
 
@@ -32,7 +35,11 @@ app.use("/api/courses", courseRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/progress", progressRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/notifications", notificationRoutes);
+app.use("/api/chat", chatRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log("Health check: /health - Server Ready");
 });
