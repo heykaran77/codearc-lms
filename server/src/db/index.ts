@@ -7,6 +7,7 @@ dotenv.config();
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }, // Required for Supabase
 });
 
 const connectDB = async () => {
@@ -18,6 +19,12 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+
+// Prevent app crash on unexpected db errors
+client.on("error", (err) => {
+  console.error("Unexpected database error:", err);
+  // Don't exit process immediately, let it try to recover or just log
+});
 
 connectDB();
 
