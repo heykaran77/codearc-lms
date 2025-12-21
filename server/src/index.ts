@@ -43,3 +43,5 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log("Health check: /health - Server Ready");
 });
+
+export default app;
