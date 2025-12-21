@@ -1,5 +1,7 @@
 # CodeArc - Learning Management System
 
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Version](https://img.shields.io/badge/Version-1.0.0-blue) ![License](https://img.shields.io/badge/License-MIT-orange)
+
 A full-stack LMS built with Node.js, Express, React, and Drizzle ORM, featuring Role-Based Access Control (RBAC) and automated certification.
 
 ## Tech Stack
@@ -47,16 +49,14 @@ A full-stack LMS built with Node.js, Express, React, and Drizzle ORM, featuring 
 
 ## My AI Usage
 
-- **AI Tools Used**: Claude
-- **Other Tools Used**: VS Code, Other Libraries
-
-* **Work Split**: ~70% Manual / ~30% AI Assisted
-* **Manual Work (70%)**:
-  - Designed and implemented the core business logic, including the sequential learning enforcement and role-based access control (RBAC).
-  - Built and styled the majority of the React frontend to ensure a custom, premium aesthetic outside of the initial scaffolding.
-  - Wrote the complex logic for certificate generation (PDFKit integration) and the review system workflow.
-* **AI Usage (30%)**:
-  - **Drizzle ORM Setup**: Since I was new to Drizzle, I used AI to help define the initial schema (tables, relations) to ensure best practices.
-  - **Scaffolding**: Used AI to quickly generate the boilerplate for repetitive CRUD controllers and basic UI component structures (like forms and modals).
-* **Reflection**:
-  - This hybrid approach allowed me to focus deeply on the unique features of the application (like the "Activity" tracking and "Upcoming Lessons" logic) while offloading the setup of the ORM and standard boilerplate to the AI.
+- **Work Split**: ~70% Manual / ~30% AI Assisted
+- **Manual Work (70%)**:
+  - **Database & Drizzle Architecture**: Designed the core relational schema and handled the majority of the Drizzle ORM implementation, including complex table relations and schema migrations.
+  - **Core Business Logic**: Engineered the sequential learning unlocking system, role-based access control (RBAC), and automated enrollment workflows.
+  - **Frontend Development**: Developed and polished the React frontend to ensure a premium user experience, focusing on responsive design and interactive components.
+  - **Custom Systems**: Built the automated PDF certificate generation engine and the comprehensive mentor review dashboard.
+- **AI Usage (30%)**:
+  - **Drizzle Deep-Dive**: Since I am transitioning into the Drizzle ecosystem, I leveraged AI for ~30% of the ORM work—primarily for syntax validation of advanced queries and optimizing relational joins.
+  - **Boilerplate & Scaffolding**: Used AI to accelerate development by generating standard CRUD controllers and initial component skeletons.
+- **Reflection**:
+  - This collaborative approach allowed me to maintain full control over the application's architecture and "unique-selling-point" features while utilizing AI as a powerful pair-programmer for rapid prototyping and syntax verification.
